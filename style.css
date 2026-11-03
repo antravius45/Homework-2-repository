@@ -1,0 +1,72 @@
+/* Base styles: mobile layout, including 320px screens */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #243746;
+  background-color: #f4f8fb;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.site-header h1 {
+  margin: 0 0 12px;
+  color: #0f4c81;
+}
+
+.site-header p,
+.site-footer p {
+  margin: 0;
+}
+
+/* One column by default for mobile */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: min(100% - 24px, 1150px);
+  margin: 0 auto;
+}
+
+.section {
+  min-width: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d0e0eb;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.section h2 {
+  margin-top: 0;
+  color: #087e8b;
+}
+
+.section ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+/* Tablet layout: 2 columns at 768px */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Desktop layout: 3 columns at 1200px */
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
